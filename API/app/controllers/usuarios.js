@@ -37,3 +37,6 @@ router.delete('/:id', async (req, res) => {
   await Usuario.findByIdAndDelete(req.params.id);
   res.json({ mensaje: 'Usuario eliminado' });
 });
+
+// Al final del archivo, justo después de todas las rutas de usuarios:
+module.exports = router;
