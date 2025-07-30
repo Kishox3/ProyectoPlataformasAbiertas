@@ -35,6 +35,17 @@ router.get('/prendas-stock', async (req, res) => {
   res.json(resultado);
 });
 
+// GET /reportes/ventas-por-fecha?fecha=YYYY-MM-DD
+router.get('/ventas-por-fecha', async (req, res) => {
+  const fecha = new Date(req.query.fecha);
+  // Agrupa por prenda sumando cantidad vendida en esa fecha
+  const agg = await Venta.aggregate([
+    { $match: { fecha_venta: fecha } },
+    { $group: { _id: '$prenda', totalVendida: { $sum: '$cantidad' } } }
+  ]);
+  res.json(agg);
+});
+
 // GET /reportes/top5-marcas
 router.get('/top5-marcas', async (req, res) => {
   // Agrega datos de prenda

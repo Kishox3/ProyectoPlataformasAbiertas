@@ -148,6 +148,21 @@ async function top5Marcas() {
   );
 }
 
+// Inserta varios usuarios en la colección usuarios
+async function crearUsuarios(lista) {
+  return await Usuario.insertMany(lista);
+}
+
+// Inserta varias prendas en la colección prendas
+async function crearPrendas(lista) {
+  return await Prenda.insertMany(lista);
+}
+
+// Inserta varias ventas en la colección ventas
+async function crearVentas(lista) {
+  return await Venta.insertMany(lista);
+}
+
 module.exports = {
   // …tus funciones CRUD
   ventasPorFecha,
