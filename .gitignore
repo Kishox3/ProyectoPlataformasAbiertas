@@ -1,0 +1,10 @@
+# node modules
+node_modules/
+
+# Entorno
+.env
+
+# Carpetas de logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

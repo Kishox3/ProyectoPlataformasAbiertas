@@ -1,0 +1,24 @@
+{
+  "name": "proyectoplataformasabiertas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kishox3/ProyectoPlataformasAbiertas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kishox3/ProyectoPlataformasAbiertas/issues"
+  },
+  "homepage": "https://github.com/Kishox3/ProyectoPlataformasAbiertas#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "mongoose": "^8.16.5"
+  }
+}
