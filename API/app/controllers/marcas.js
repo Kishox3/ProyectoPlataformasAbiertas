@@ -1,5 +1,6 @@
 // API/app/controllers/marcas.js
-const router = require('express').Router();
+const express = require('express');
+const router  = express.Router();
 const Marca = require('../models/Marca');
 
 // Create

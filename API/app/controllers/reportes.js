@@ -1,5 +1,6 @@
 // API/app/controllers/reportes.js
-const router = require('express').Router();
+const express = require('express');
+const router  = express.Router();
 const Prenda = require('../models/Prenda');
 const Marca  = require('../models/Marca');
 const Venta  = require('../models/Venta');

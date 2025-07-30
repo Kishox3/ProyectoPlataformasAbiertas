@@ -1,5 +1,6 @@
 // API/app/controllers/usuarios.js
-const router = require('express').Router();
+const express = require('express');
+const router  = express.Router();
 const Usuario = require('../models/Usuario');
 
 // Create

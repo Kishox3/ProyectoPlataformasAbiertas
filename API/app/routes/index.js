@@ -1,5 +1,7 @@
 // API/app/routes/index.js
-const router = require('express').Router();
+const express = require('express');
+const router  = express.Router();
+
 
 router.use('/usuarios', require('../controllers/usuarios'));
 router.use('/marcas',   require('../controllers/marcas'));

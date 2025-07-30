@@ -1,5 +1,6 @@
 // API/app/controllers/ventas.js
-const router = require('express').Router();
+const express = require('express');
+const router  = express.Router();
 const Venta = require('../models/Venta');
 
 // Create
