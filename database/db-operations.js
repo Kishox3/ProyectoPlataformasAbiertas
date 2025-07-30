@@ -77,3 +77,81 @@ module.exports = {
   // …exporta también los modelos si los usas directo
 };
 
+// --- Consultas Avanzadas ---
+
+/** 
+ * Obtener cantidad vendida de prendas en una fecha específica.
+ * @param {Date} fecha 
+ */
+async function ventasPorFecha(fecha) {
+  return await Venta.aggregate([
+    { $match: { fecha_venta: fecha } },
+    { $group: { _id: '$prenda', totalVendida: { $sum: '$cantidad' } } }
+  ]);
+}
+
+/** 
+ * Lista de marcas con al menos una venta.
+ */
+async function marcasConVenta() {
+  return await Venta.distinct('prenda')
+    .then(prendas => Prenda.find({ _id: { $in: prendas } }).populate('marca'))
+    .then(prs => [...new Set(prs.map(p => p.marca.nombre))]);
+}
+
+/** 
+ * Prendas vendidas y stock restante.
+ */
+async function prendasStock() {
+  const vendidas = await Venta.aggregate([
+    { $group: { _id: '$prenda', totalVendida: { $sum: '$cantidad' } } }
+  ]);
+  return await Promise.all(
+    vendidas.map(async v => {
+      const pr = await Prenda.findById(v._id);
+      return {
+        prenda: pr.nombre,
+        stockRestante: pr.cantidad_stock - v.totalVendida
+      };
+    })
+  );
+}
+
+/** 
+ * Top 5 marcas más vendidas.
+ */
+async function top5Marcas() {
+  const agg = await Venta.aggregate([
+    {
+      $lookup: {
+        from: 'prendas',
+        localField: 'prenda',
+        foreignField: '_id',
+        as: 'prendaInfo'
+      }
+    },
+    { $unwind: '$prendaInfo' },
+    {
+      $group: {
+        _id: '$prendaInfo.marca',
+        ventas: { $sum: '$cantidad' }
+      }
+    },
+    { $sort: { ventas: -1 } },
+    { $limit: 5 }
+  ]);
+  return await Promise.all(
+    agg.map(async a => {
+      const m = await Marca.findById(a._id);
+      return { marca: m.nombre, ventas: a.ventas };
+    })
+  );
+}
+
+module.exports = {
+  // …tus funciones CRUD
+  ventasPorFecha,
+  marcasConVenta,
+  prendasStock,
+  top5Marcas
+};
