@@ -46,3 +46,34 @@ const Prenda  = mongoose.model('Prenda', prendaSchema);
 const Venta   = mongoose.model('Venta', ventaSchema);
 
 module.exports = { Usuario, Marca, Prenda, Venta, mongoose };
+
+// --- CRUD Básico ---
+
+// Insertar un usuario
+async function crearUsuario(data) {
+  return await Usuario.create(data);
+}
+
+// Insertar varias marcas
+async function crearMarcas(lista) {
+  return await Marca.insertMany(lista);
+}
+
+// Actualizar una prenda por ID
+async function actualizarPrenda(id, cambios) {
+  return await Prenda.findByIdAndUpdate(id, cambios, { new: true });
+}
+
+// Eliminar una venta por ID
+async function eliminarVenta(id) {
+  return await Venta.findByIdAndDelete(id);
+}
+
+module.exports = {
+  crearUsuario,
+  crearMarcas,
+  actualizarPrenda,
+  eliminarVenta,
+  // …exporta también los modelos si los usas directo
+};
+
