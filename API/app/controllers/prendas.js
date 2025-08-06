@@ -5,8 +5,21 @@ const Prenda = require('../models/Prenda');
 
 // Create
 router.post('/', async (req, res) => {
-  const p = await Prenda.create(req.body);
-  res.status(201).json(p);
+  try {
+    // Buscar si ya existe una prenda con mismo nombre y marca
+    const existente = await Prenda.findOne({ nombre: req.body.nombre, marca: req.body.marca });
+    if (existente) {
+      // Sumar stock
+      existente.cantidad_stock += Number(req.body.cantidad_stock);
+      await existente.save();
+      return res.status(200).json(existente);
+    }
+    // Si no existe, crear nueva
+    const p = await Prenda.create(req.body);
+    res.status(201).json(p);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // Read all
