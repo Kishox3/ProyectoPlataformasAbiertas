@@ -101,7 +101,7 @@ Sigue estos pasos para poner en marcha el proyecto en tu entorno local:
 ## API RESTful
 
 La API RESTful permite interactuar con todas las colecciones y reportes de la tienda.  
-**Base URL:** `http://localhost:5000/tienda/api/v1`
+**Base URL:** `${API_BASE_URL}`
 
 ### Endpoints por Colección
 
@@ -184,7 +184,7 @@ Reemplaza `/usuarios` por `/ventas`.
 | GET    | `/reportes/ventas-por-fecha?fecha=YYYY-MM-DD` | Devuelve la cantidad vendida de prendas en una fecha específica     |
 
 **Ejemplo de uso:**  
-`GET http://localhost:5000/tienda/api/v1/reportes/ventas-por-fecha?fecha=2025-07-01`
+`GET ${API_BASE_URL}/reportes/ventas-por-fecha?fecha=2025-07-01`
 
 ---
 

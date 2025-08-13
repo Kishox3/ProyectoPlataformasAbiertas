@@ -18,14 +18,14 @@
               "mode": "raw",
               "raw": "{\n  \"username\": \"eduardo\",\n  \"email\": \"edu@example.com\",\n  \"password\": \"abc123\",\n  \"rol\": \"admin\"\n}"
             },
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/usuarios", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "usuarios"] }
+            "url": { "raw": "${API_BASE_URL}/usuarios", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "usuarios"] }
           }
         },
         {
           "name": "Listar usuarios",
           "request": {
             "method": "GET",
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/usuarios", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "usuarios"] }
+            "url": { "raw": "${API_BASE_URL}/usuarios", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "usuarios"] }
           }
         }
       ]
@@ -42,14 +42,14 @@
               "mode": "raw",
               "raw": "{\n  \"nombre\": \"Nike\",\n  \"pais\": \"USA\"\n}"
             },
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/marcas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "marcas"] }
+            "url": { "raw": "${API_BASE_URL}/marcas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "marcas"] }
           }
         },
         {
           "name": "Listar marcas",
           "request": {
             "method": "GET",
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/marcas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "marcas"] }
+            "url": { "raw": "${API_BASE_URL}/marcas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "marcas"] }
           }
         }
       ]
@@ -66,14 +66,14 @@
               "mode": "raw",
               "raw": "{\n  \"nombre\": \"Camiseta\",\n  \"marca\": \"<ID_MARCA>\",\n  \"precio\": 25,\n  \"cantidad_stock\": 100\n}"
             },
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/prendas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "prendas"] }
+            "url": { "raw": "${API_BASE_URL}/prendas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "prendas"] }
           }
         },
         {
           "name": "Listar prendas",
           "request": {
             "method": "GET",
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/prendas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "prendas"] }
+            "url": { "raw": "${API_BASE_URL}/prendas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "prendas"] }
           }
         }
       ]
@@ -90,14 +90,14 @@
               "mode": "raw",
               "raw": "{\n  \"prenda\": \"<ID_PRENDA>\",\n  \"fecha_venta\": \"2024-07-30T00:00:00.000Z\",\n  \"cantidad\": 2,\n  \"total\": 50,\n  \"usuario\": \"<ID_USUARIO>\"\n}"
             },
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/ventas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "ventas"] }
+            "url": { "raw": "${API_BASE_URL}/ventas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "ventas"] }
           }
         },
         {
           "name": "Listar ventas",
           "request": {
             "method": "GET",
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/ventas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "ventas"] }
+            "url": { "raw": "${API_BASE_URL}/ventas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "ventas"] }
           }
         }
       ]
@@ -109,21 +109,21 @@
           "name": "Marcas con ventas",
           "request": {
             "method": "GET",
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/reportes/marcas-con-ventas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "reportes", "marcas-con-ventas"] }
+            "url": { "raw": "${API_BASE_URL}/reportes/marcas-con-ventas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "reportes", "marcas-con-ventas"] }
           }
         },
         {
           "name": "Prendas stock",
           "request": {
             "method": "GET",
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/reportes/prendas-stock", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "reportes", "prendas-stock"] }
+            "url": { "raw": "${API_BASE_URL}/reportes/prendas-stock", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "reportes", "prendas-stock"] }
           }
         },
         {
           "name": "Top 5 marcas",
           "request": {
             "method": "GET",
-            "url": { "raw": "http://localhost:5000/tienda/api/v1/reportes/top5-marcas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "reportes", "top5-marcas"] }
+            "url": { "raw": "${API_BASE_URL}/reportes/top5-marcas", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["tienda", "api", "v1", "reportes", "top5-marcas"] }
           }
         },
         {
@@ -131,7 +131,7 @@
           "request": {
             "method": "GET",
             "url": {
-              "raw": "http://localhost:5000/tienda/api/v1/reportes/ventas-por-fecha?fecha=2024-07-30",
+              "raw": "${API_BASE_URL}/reportes/ventas-por-fecha?fecha=2024-07-30",
               "protocol": "http",
               "host": ["localhost"],
               "port": "5000",
