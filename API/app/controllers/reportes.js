@@ -1,4 +1,4 @@
-// API/app/controllers/reportes.js
+// backend/API/app/controllers/reportes.js
 const express = require('express');
 const router  = express.Router();
 const Prenda = require('../models/Prenda');

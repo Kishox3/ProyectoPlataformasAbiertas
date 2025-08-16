@@ -1,4 +1,4 @@
-// API/app/models/Marca.js
+// backend/API/app/models/Marca.js
 const mongoose = require('mongoose');
 
 const marcaSchema = new mongoose.Schema({

@@ -1,4 +1,4 @@
-// API/app/models/Prenda.js
+// backend/API/app/models/Prenda.js
 const mongoose = require('mongoose');
 
 const prendaSchema = new mongoose.Schema({

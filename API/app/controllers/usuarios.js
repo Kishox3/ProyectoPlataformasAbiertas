@@ -1,4 +1,4 @@
-// API/app/controllers/usuarios.js
+// backend/API/app/controllers/usuarios.js
 const express = require('express');
 const router  = express.Router();
 const Usuario = require('../models/Usuario');

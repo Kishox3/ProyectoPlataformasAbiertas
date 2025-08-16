@@ -1,4 +1,4 @@
-// API/app/controllers/prendas.js
+// backend/API/app/controllers/prendas.js
 const express = require('express');
 const router  = express.Router();
 const Prenda = require('../models/Prenda');

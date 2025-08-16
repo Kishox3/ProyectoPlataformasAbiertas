@@ -1,4 +1,4 @@
-// API/app/models/Usuario.js
+// backend/API/app/models/Usuario.js
 const mongoose = require('mongoose');
 
 const usuarioSchema = new mongoose.Schema({

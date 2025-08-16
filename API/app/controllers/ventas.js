@@ -1,4 +1,4 @@
-// API/app/controllers/ventas.js
+// backend/API/app/controllers/ventas.js
 const express = require('express');
 const router  = express.Router();
 const Venta = require('../models/Venta');
